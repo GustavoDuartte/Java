@@ -6,30 +6,15 @@ public class Main {
 
 		Boletim n[] = new Boletim[4];
 
-		n[0] = new Boletim();
-		n[1] = new Boletim();
-		n[2] = new Boletim();
-		n[3] = new Boletim();
+		n[0] = new Boletim("Jair", 1f, 1f, 5f);
+		n[1] = new Boletim("Jose", 8f, 7f, 3f);
+		n[2] = new Boletim("Jesus", 6f, 5.5f, 7f);
+		n[3] = new Boletim("Joel", 8.8f, 10f, 10f);
 
-		n[0].aluno = "Jair";
-		n[0].portugues = 10;
-		n[0].matematica = 5;
-		n[0].ciencias = 10;
-
-		n[1].aluno = "Jose";
-		n[1].portugues = 8;
-		n[1].matematica = 7;
-		n[1].ciencias = 3;
-
-		n[2].aluno = "Humberto";
-		n[2].portugues = 6;
-		n[2].matematica = (double) 5.5;
-		n[2].ciencias = 7;
-
-		n[3].aluno = "Zerobelo";
-		n[3].portugues = (double) 8.8;
-		n[3].matematica = 10;
-		n[3].ciencias = 10;
+		System.out.println("Aluno\tPort.\tMat.\tCien.");
+		for (int i = 0; i < 4; i++) {
+			System.out.println(n[i].toString());
+		}
 
 	}
 
