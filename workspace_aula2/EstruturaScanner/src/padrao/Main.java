@@ -10,14 +10,14 @@ public class Main {
 		int idade;
 		float peso;
 
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Digite seu nome: ");
-		nome = scan.next();
-		System.out.println("Digite sua idade: ");
-		idade = scan.nextInt();
-		System.out.println("Digite seu peso: ");
-		peso = scan.nextFloat();
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.println("Digite seu nome: ");
+			nome = scan.next();
+			System.out.println("Digite sua idade: ");
+			idade = scan.nextInt();
+			System.out.println("Digite seu peso: ");
+			peso = scan.nextFloat();
+		}
 		
 		System.out.println("Nome: "+nome+" idade: "+idade+" peso: "+peso);
 
