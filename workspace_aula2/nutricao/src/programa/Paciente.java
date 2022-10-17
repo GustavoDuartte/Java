@@ -6,7 +6,7 @@ public class Paciente {
 	float peso;
 	float altura;
 
-	float imc() {
+	public float imc() {
 		return peso / (altura * altura);
 	}
 
