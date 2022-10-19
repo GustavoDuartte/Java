@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author Aluno
+ * @author Gustavo
  *
  */
 module Comercio {
