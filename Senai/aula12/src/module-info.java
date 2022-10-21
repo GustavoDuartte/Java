@@ -5,5 +5,5 @@
  * @author Aluno
  *
  */
-module Padrao {
+module aula12 {
 }
