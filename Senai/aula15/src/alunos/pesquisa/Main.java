@@ -27,7 +27,7 @@ public class Main {
 				cont++;
 				total += lista.get(i).idade;
 			}
-			if (lista.get(i).fasedavida().equals("jovem")) {
+			if (lista.get(i).fasedavida().equals("Jovem")) {
 				cont1++;
 				total1 += lista.get(i).idade;
 			}
@@ -51,9 +51,9 @@ public class Main {
 
 		System.out.println("\nA media de idade e: " + totalmedia / lista.size() + " anos");
 
-		System.out
-				.println("\nA media de idade das criancas e " + (total / cont) + " anos, dos jovens " + (total1 / cont1)
-						+ " anos, dos adultos " + (total2 / cont2) + " anos, dos idosos " + (total3 / cont3) + " anos");
+		System.out.println("\nMEDIA RELATIVA DE IDADE");
+		System.out.printf("\nCriancas: %d\nJovens: %d\nAdultos: %d\nIdosos: %d", (total / cont), (total1 / cont1),
+				(total2 / cont2), (total3 / cont3));
 
 	}
 
