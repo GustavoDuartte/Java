@@ -26,13 +26,15 @@ public class Main {
 			System.out.println("5.Buscar por pet");
 			System.out.println("6.Buscar por Veterinario");
 			System.out.println("7.Buscar por Vacina");
-			System.out.println("8.Sair");
+			System.out.println("8.Agendar");
+			System.out.println("9.Listar Agendados");
+			System.out.println("10.Listar Vacinados");
+			System.out.println("11.Sair");
 
 			menu = scan.nextInt();
 
 			switch (menu) {
 			case 1:
-//				System.out.printf("%d/%d/%d",diaAtual,mesAtual,anoAtual);
 				System.out.println("Digite quantas vezes deseja realizar o cadastro: ");
 				qtd = scan.nextInt();
 				System.out.println(
@@ -55,8 +57,8 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Digite o nome do Pet que voce quer encontrar: ");
-				searchpet(scan.next());
 				System.out.println("NomePet\t\t\tVeterinario\t\tNomeVacina\t\tData");
+				searchpet(scan.next());
 				break;
 			case 6:
 				System.out.println("Digite o nome do veterinario que voce quer encontrar: ");
@@ -65,10 +67,21 @@ public class Main {
 				break;
 			case 7:
 				System.out.println("Digite o nome da vacina que voce quer encontrar: ");
-				searchvac(scan.next());
 				System.out.println("NomePet\t\t\tVeterinario\t\tNomeVacina\t\tData");
+				searchvac(scan.next());
 				break;
 			case 8:
+				System.out.println(
+						"Para agendar, digite o nome do pet, do veterinario, da vacina, e a data agendada separada por espaco, respectivamente: ");
+				agendar();
+				break;
+			case 9:
+				System.out.println("NomePet\t\t\tVeterinario\t\tNomeVacina\t\tData");
+				readAgendado();
+				break;
+			case 10:
+				break;
+			case 11:
 				System.out.println("Tchau!");
 				break;
 			default:
@@ -95,19 +108,51 @@ public class Main {
 		for (Vacina v : vacinas) {
 			System.out.printf(v.toString());
 			if (anoAtual > v.getAno()) {
-				System.out.println("Vacinado a " + (anoAtual - v.getAno()) + " anos");
+				System.out.println("  Vacinado a " + (anoAtual - v.getAno()) + " anos");
 			} else if (anoAtual == v.getAno()) {
 				if (mesAtual > v.getMes()) {
-					System.out.println("Vacinado a " + (mesAtual - v.getMes() + 1) + " meses");
+					System.out.println("  Vacinado a " + (mesAtual - v.getMes() + 1) + " meses");
 				} else if (mesAtual + 1 == v.getMes()) {
 					if (diaAtual > v.getDia()) {
-						System.out.println("Vacinado a " + (diaAtual - v.getDia()) + " dias");
+						System.out.println("  Vacinado a " + (diaAtual - v.getDia()) + " dias");
 					} else if (diaAtual == v.getDia()) {
+						System.out.println("  Vacinado hoje!");
+					} else if (diaAtual < v.getDia()) {
+						System.out.println("Agendado para daqui " + (v.getDia() - diaAtual) + " dias");
+					}
+				} else if (mesAtual + 1 < v.getMes()) {
+					System.out.println("Agendado para daqui " + (v.getMes() - mesAtual) + " meses");
+				}
+			} else if (anoAtual < v.getAno()) {
+				System.out.println("Agendado para daqui " + (v.getAno() - anoAtual) + " anos");
+			}
+		}
+	}
+
+	public static void readAgendado() {
+		for (Vacina v : vacinas) {
+			System.out.printf(v.toString());
+			if (anoAtual < v.getAno()) {
+				System.out.println("Agendado para daqui " + (v.getAno() - anoAtual) + " anos");
+			}
+			if (anoAtual == v.getAno()) {
+				if (mesAtual + 1 == v.getMes()) {
+					if (diaAtual == v.getDia()) {
 						System.out.println("Vacinado hoje!");
 					}
+					if (diaAtual < v.getDia()) {
+						System.out.println("Agendado para daqui " + (v.getDia() - diaAtual) + " dias");
+					}
+				}
+				if (mesAtual + 1 < v.getMes()) {
+					System.out.println("Agendado para daqui " + (v.getMes() - mesAtual) + " meses");
 				}
 			}
 		}
+	}
+
+	public static void readVacinado() {
+
 	}
 
 	public static void update(int indice) {
@@ -158,6 +203,17 @@ public class Main {
 				System.out.println(v.toString());
 			}
 		}
+	}
+
+	public static void agendar() {
+		Vacina v = new Vacina();
+		v.setNomePet(scan.next());
+		v.setVeterinario(scan.next());
+		v.setNomeVacina(scan.next());
+		v.setDia(scan.nextInt());
+		v.setMes(scan.nextInt());
+		v.setAno(scan.nextInt());
+		vacinas.add(v);
 	}
 
 }
