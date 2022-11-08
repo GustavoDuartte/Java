@@ -67,8 +67,7 @@ public class Vacina {
 
 	@Override
 	public String toString() {
-		return String.format("%s   \t\t%s   \t\t%s   \t\t%d/%d/%d\t\n", nomePet, veterinario, nomeVacina, dia, mes,
-				ano);
+		return String.format("%s   \t\t%s   \t\t%s   \t\t%d/%d/%d\t", nomePet, veterinario, nomeVacina, dia, mes, ano);
 	}
 
 }

@@ -2,6 +2,7 @@ package vacinas.aplicacoes;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +19,7 @@ public class Main {
 		mesAtual = c.get(Calendar.MONTH);
 		diaAtual = c.get(Calendar.DAY_OF_MONTH);
 
-		while (menu != 8) {
+		while (menu != 11) {
 			System.out.println("1.Cadastrar Vacina");
 			System.out.println("2.Listar Todas");
 			System.out.println("3.Alterar Dados");
@@ -32,7 +33,7 @@ public class Main {
 			System.out.println("11.Sair");
 
 			menu = scan.nextInt();
-
+			
 			switch (menu) {
 			case 1:
 				System.out.println("Digite quantas vezes deseja realizar o cadastro: ");
