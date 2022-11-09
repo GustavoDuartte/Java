@@ -44,7 +44,7 @@ public class Funcionario {
 	}
 
 	public String toString() {
-		return String.format("%d\t%s\t%s", matricula, nome, sdf.format(nascimento.getTime()));
+		return String.format("%d\t\t%s\t%s", matricula, nome, sdf.format(nascimento.getTime()));
 	}
 
 }
