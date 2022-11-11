@@ -27,9 +27,9 @@ public class Eleicao {
 		} else if (numerog == 13) {
 			return "CANDIDATO: FERNANDO HADDAD";
 		} else if (numerog == 0 || numerog == 00) {
-			return "VOTO BRANCO";
+			return "VOTO BRANCO PARA GOVERNADOR";
 		} else {
-			return "VOTO NULO";
+			return "VOTO NULO PARA GOVERNADOR";
 		}
 	}
 
@@ -39,9 +39,9 @@ public class Eleicao {
 		} else if (numerop == 22) {
 			return "CANDIDATO: JAIR MESSIAS BOLSONARO";
 		} else if (numerop == 0 || numerop == 00) {
-			return "VOTO BRANCO";
+			return "VOTO BRANCO PARA PRESIDENTE";
 		} else {
-			return "VOTO NULO";
+			return "VOTO NULO PARA PRESIDENTE";
 		}
 	}
 
