@@ -23,25 +23,25 @@ public class Eleicao {
 
 	public String governador() {
 		if (numerog == 10) {
-			return "CANDIDATO: TARCISIO GOMES DE FREITAS";
+			return "CANDIDATO; TARCISIO GOMES DE FREITAS";
 		} else if (numerog == 13) {
-			return "CANDIDATO: FERNANDO HADDAD";
+			return "CANDIDATO; FERNANDO HADDAD";
 		} else if (numerog == 0 || numerog == 00) {
-			return "VOTO BRANCO PARA GOVERNADOR";
+			return "CANDIDATO; VOTO BRANCO PARA GOVERNADOR";
 		} else {
-			return "VOTO NULO PARA GOVERNADOR";
+			return "CANDIDATO; VOTO NULO PARA GOVERNADOR";
 		}
 	}
 
 	public String presidente() {
 		if (numerop == 13) {
-			return "CANDIDATO: LUIZ INACIO DA SILVA";
+			return "CANDIDATO; LUIZ INACIO DA SILVA";
 		} else if (numerop == 22) {
-			return "CANDIDATO: JAIR MESSIAS BOLSONARO";
+			return "CANDIDATO; JAIR MESSIAS BOLSONARO";
 		} else if (numerop == 0 || numerop == 00) {
-			return "VOTO BRANCO PARA PRESIDENTE";
+			return "CANDIDATO; VOTO BRANCO PARA PRESIDENTE";
 		} else {
-			return "VOTO NULO PARA PRESIDENTE";
+			return "CANDIDATO; VOTO NULO PARA PRESIDENTE";
 		}
 	}
 

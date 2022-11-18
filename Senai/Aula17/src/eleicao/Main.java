@@ -56,43 +56,11 @@ public class Main {
 			BufferedReader br = new BufferedReader(new FileReader("./src/eleicao/bd/eleicoes.csv"));
 			String s;
 
-			System.out.println("Apuracao dos votos.");
-			
 			while ((s = br.readLine()) != null) {
-				if (s.equalsIgnoreCase("CANDIDATO: TARCISIO GOMES DE FREITAS")) {
-					contGt += contGt;
-				}
-				if (s.equalsIgnoreCase("CANDIDATO: FERNANDO HADDAD")) {
-					contGh++;
-				}
-				if (s.equalsIgnoreCase("CANDIDATO: JAIR MESSIAS BOLSONARO")) {
-					contPj++;
-				}
-				if (s.equalsIgnoreCase("CANDIDATO: LUIZ INACIO DA SILVA")) {
-					contPl++;
-				}
-				if (s.equalsIgnoreCase("VOTO NULO PARA GOVERNADOR")) {
-					contGn++;
-				}
-				if (s.equalsIgnoreCase("VOTO BRANCO PARA GOVERNADOR")) {
-					contGb++;
-				}
-				if (s.equalsIgnoreCase("VOTO BRANCO PARA PRESIDENTE")) {
-					contPb++;
-				}
-				if (s.equalsIgnoreCase("VOTO NULO PARA PRESIDENTE")) {
-					contPn++;
-				}
+				String vetor[] = s.split(";");
+				System.out.println(s);
 			}
-			System.out.println("JAIR MESSIAS BOLSONARO: "+contPj);
-			System.out.println("LUIZ INACIO DA SILVA: "+contPl);
-			System.out.println("TARCISIO GOMES DE FREITAS: "+contGt);
-			System.out.println("FERNANDO HADDAD: "+contGh);
-			System.out.println("VOTOS BRANCOS PARA PRESIDENTE: "+contPb);
-			System.out.println("VOTOS NULOS PARA PRESIDENTE: "+contPn);
-			System.out.println("VOTOS BRANCOS PARA GOVERNADOR: "+contGb);
-			System.out.println("VOTOS NULOS PARA GOVERNADOR: "+contGn);
-
+			br.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
