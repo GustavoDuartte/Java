@@ -20,11 +20,10 @@ public class Main2 {
 	static String nomeCaro = null, nomeBarato = null, nomeVelho = null, nomeNovo = null;
 
 	public static String toTxt() {
-		return String.format("%.2f\t%s\t%s\t%s\t%s\r\n", media, nomeCaro, nomeBarato, nomeVelho, nomeNovo);			
+		return String.format("%.2f\t%s\t%s\t%s\t%s\r\n", media, nomeCaro, nomeBarato, nomeVelho, nomeNovo);
 	}
-	
+
 	public static void main(String[] args) {
-		
 
 		try {
 			br = new BufferedReader(new FileReader("./src/exercicios2/dados2/bd/dados2.csv"));
@@ -33,7 +32,7 @@ public class Main2 {
 			while (s != null) {
 				String palavras[] = s.split(";");
 				System.out.print(palavras[0] + "\t" + palavras[1] + "\t" + palavras[2] + "\n");
-				
+
 				if (i != 0) {
 					preco = Float.parseFloat(palavras[2]);
 					ano = Float.parseFloat(palavras[1]);
@@ -60,20 +59,19 @@ public class Main2 {
 				s = br.readLine();
 			}
 			br.close();
-			
+
 			media = total / i;
-			
-			bw = new BufferedWriter(new FileWriter("./src/exercicios2/dados2/bd/relatorio.txt",true));
+
+			bw = new BufferedWriter(new FileWriter("./src/exercicios2/dados2/bd/relatorio.txt", true));
 			bw.write(toTxt());
 			bw.close();
-			
+
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo não encontrado, erro: " + e);
 		} catch (IOException e) {
 			System.out.println("Erro ao ler o arquivo, erro: " + e);
 		}
 
-		
 		System.out.println("A media de precos dos carros e: " + media);
 		System.out.println("O carro mais barato e: " + nomeBarato);
 		System.out.println("O carro mais caro e: " + nomeCaro);

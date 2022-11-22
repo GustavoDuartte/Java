@@ -20,12 +20,12 @@ public class Main {
 			while (s != null) {
 				String palavras[] = s.split(" ");
 				System.out.print(s);
-				System.out.print("\tA linha possui "+s.length()+" letras");
-				System.out.println("\t"+palavras.length+" palavras\n");
+				System.out.print("\tA linha possui " + s.length() + " letras");
+				System.out.println("\t" + palavras.length + " palavras\n");
 				s = br.readLine();
 				contlinha++;
 			}
-			System.out.println("\nHa "+contlinha+" linhas");
+			System.out.println("\nHa " + contlinha + " linhas");
 			br.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo não encontrado, erro: " + e);
