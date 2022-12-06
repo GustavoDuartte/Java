@@ -27,10 +27,6 @@ public class Pessoa {
 		}
 	}
 
-	public Pessoa() {
-		
-	}
-
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", idade=" + idade + ", faseDaVida()=" + faseDaVida() + "]";
