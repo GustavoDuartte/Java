@@ -7,7 +7,7 @@ public class Paciente {
 	private float altura;
 
 	float obterIMC() {
-		return (peso / (altura * altura)) * 10000;
+		return peso / (altura * altura);
 	}
 
 	String obterDiagnostico() {

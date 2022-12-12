@@ -57,7 +57,7 @@ public class Main extends JFrame implements ActionListener {
 		campoPeso.setBounds(100, 60, 400, 30);
 		painel.add(campoPeso);
 
-		rotuloAltura = new JLabel("Altura(cm): ");
+		rotuloAltura = new JLabel("Altura(m): ");
 		rotuloAltura.setBounds(20, 100, 200, 30);
 		painel.add(rotuloAltura);
 
